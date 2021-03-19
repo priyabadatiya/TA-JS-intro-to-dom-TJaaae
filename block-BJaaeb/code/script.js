@@ -40,14 +40,17 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 */
 
 // Your code goes here
+function createTodoList() {
+
+}
 
 // TEST
 createTodoList([
-  { name: 'Learn DOM', isDone: false },
-  { name: 'Learn JS', isDone: true },
+    { name: 'Learn DOM', isDone: false },
+    { name: 'Learn JS', isDone: true },
 ]);
 createTodoList([
-  { name: 'Learn DOM', isDone: false },
-  { name: 'Learn React', isDone: true },
-  { name: 'Learn JS', isDone: true },
+    { name: 'Learn DOM', isDone: false },
+    { name: 'Learn React', isDone: true },
+    { name: 'Learn JS', isDone: true },
 ]);
