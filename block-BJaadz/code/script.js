@@ -5,7 +5,7 @@ let heading = document.querySelector("h1");
 console.log(typeof heading)
 
 // Change the color of heading to black.
-heading.style.color = "black";
+console.log(heading.style.color = "black");
 
 // Select all the hr elements and store it in a variable named allHrs using querySelectorAll
 let allHrs = document.querySelectorAll("hr")
@@ -23,7 +23,7 @@ let allHrsArray = Array.from(allHrs)
 console.log(allHrsArray);
 
 // Set the border of the all the hr elements to "1px solid tomato"
-allHrsArray.forEach(element => (element.style.border = "1px solid tomato"));
+console.log(allHrsArray.forEach(element => (element.style.border = "1px solid tomato")));
 
 // Change the background of all the hr to "antiquewhite" using for of loop.
 for (let hr of allHrsArray) { hr.style.background = "antiquewhite" };
@@ -38,6 +38,7 @@ heading.style.textAlign = "center";
 heading.style.fontSize = "3rem";
 
 // Change the border of hr with class 'image' to `2px solid purple`.
+document.querySelectorAll("hr.image").forEach(elm => elm.style.border)
 
 // Hide the box number 17 (last box).
 document.querySelector(".seventeen").style.display = "none";
@@ -54,10 +55,11 @@ let para = document.createElement("p");
 para.innerText = "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure.";
 
 // Remove all the elements from box 1
-
+let boxOne = document.querySelector(".one");
+boxOne.innerText = "";
 
 // Replace all the elements inside box 1 with the para (you created above)
-
+boxOne.append(para);
 
 /* Walking the DOM
 Do the following after selecting box 16 and storing in variable named box16
@@ -126,7 +128,13 @@ box6.style.color = "black";
 console.log(document.querySelector(".one").style.fontSize = "0.8rem");
 
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
+let allBoxes = document.querySelectorAll(".box");
 
+allBoxes.forEach((elem, index) => {
+    if ((index + 1) % 2 !== 0) {
+        elem.style.backgroundColor = "aliceblue";
+    }
+});
 
 // add a class named "awesome-box" to the box 6 using classList property of DOM element.
 console.log(box6.classList.add("awesome-box"));
