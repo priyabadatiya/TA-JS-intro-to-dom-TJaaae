@@ -6,7 +6,7 @@ default value to be "text" and return the input element inside label. (create it
 */
 
 // Your code goes here
-function createInputElm(labelMessage, type = Text) {
+function createInputElm(labelMessage, type = "text") {
     let label = document.createElement("label");
     let input = document.createElement("input");
     input.type = type;
@@ -36,7 +36,7 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // Your code goes here
 function createList(array = []) {
     let html = `<ul>
-  ${array.map(elem => `<li>${elem}</li>`).join("")}
+  ${array.map(elem => `<li>${elem}</li>\n`).join("").slice(0,-1)}
   </ul>`;
   return html;
 }
@@ -62,9 +62,9 @@ function createTodoList(data = []) {
   let html = `<ul>
 ${data
   .map(
-    todo => `<li>
-<p>${todo.name}</p>
-<input type="checkbox" ${todo.isDone ? "checked" : ""} name="" id="">
+    e => `<li>
+<p>${e.name}</p>
+<input type="checkbox" ${e.isDone ? "checked" :""} name="" id="">
 <span>X</span>
 </li>`
   )
